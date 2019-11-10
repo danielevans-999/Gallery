@@ -10,10 +10,13 @@ class Category(models.Model):
 class Location(models.Model):
     loc_name = models.CharField(max_length=30)
     
+    def __str__(self):
+        return self.loc_name
+    
 class Image(models.Model):
     image = models.ImageField(upload_to='images/')
     image_name = models.CharField(max_length=30)
-    image_descprition = models.CharField(max_length=30)
+    image_descprition = models.CharField(max_length=150)
     location = models.ForeignKey(Location,on_delete=models.CASCADE)
     category = models.ForeignKey(Category,on_delete=models.CASCADE)
     
@@ -23,8 +26,8 @@ class Image(models.Model):
         
         return image
     @classmethod
-    def search_image(cls,category):
-        images = cls.objects.filter(category = category)
+    def search_image(cls,categorys):
+        images = cls.objects.filter(category__name = categorys)
         
         return images
     
@@ -43,6 +46,7 @@ class Image(models.Model):
         
 
     def __str__(self):
-        return self.name
-    
+        return self.image_name
+    class Meta:
+        ordering = ['image_name']
    
