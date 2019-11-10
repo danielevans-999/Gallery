@@ -3,6 +3,10 @@ from django.db import models
 class Category(models.Model):
     name = models.CharField(max_length=30)
     
+    
+    def __str__(self):
+        return self.name
+    
 class Location(models.Model):
     loc_name = models.CharField(max_length=30)
     
@@ -18,3 +22,7 @@ class Image(models.Model):
         
     def delete_image(self):
         self.delete()
+        
+
+    def __str__(self):
+        return self.name
