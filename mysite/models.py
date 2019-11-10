@@ -12,3 +12,9 @@ class Image(models.Model):
     image_descprition = models.CharField(max_length=30)
     location = models.ForeignKey(Location,on_delete=models.CASCADE)
     category = models.ForeignKey(Category,on_delete=models.CASCADE)
+    
+    def save_image(self):
+        self.save
+        
+    def delete_image(self):
+        self.delete()
