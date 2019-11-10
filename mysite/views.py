@@ -6,9 +6,9 @@ def home(request):
     return render(request,'mysite/home.html' ,{"images":images})
 
 def search_results(request):
-    if 'images' in request.GET and request.GET["images"]:
+    if 'image' in request.GET and request.GET["image"]:
 
-        search_term = request.GET.get("images")
+        search_term = request.GET.get("image")
         searched_Images = Image.search_image(search_term)
         message = f"{search_term}"
 
