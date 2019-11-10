@@ -4,3 +4,13 @@
   background-color: slategrey;
    
 }
+
+img{
+    width: 100%;
+    max-height: 200px;
+    max-width: 200px;
+}
+
+body{
+    background-color: #4444;
+}
