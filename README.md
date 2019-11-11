@@ -15,7 +15,7 @@ This is a website that enables one to view various images that interests them an
 |filter by location           | select the location you want to view photo from|display the location's images|  |search by category           | input category & click search|display the categor's images.
 ## Installing 
 
-To view the application go to [click here](  )
+To view the application go to [click here]( https://dantagall.herokuapp.com/ )
 
 - Step 1: Clone this repo :git clone (https://github.com/danielevans-999/Gallery)
 
