@@ -10,6 +10,12 @@ class Category(models.Model):
 class Location(models.Model):
     loc_name = models.CharField(max_length=30)
     
+    def save_loc(self):
+        self.save
+        
+    def delete_loc(self):
+        self.delete()
+    
     def __str__(self):
         return self.loc_name
     
