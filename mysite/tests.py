@@ -70,5 +70,17 @@ class CategoryTestClass(TestCase):
         Category.objects.all().delete()
         
         
+class ImageTestClass(TestCase):
+    
+    def setUp(self):
+        self.nakuru = Location(loc_name='nakuru')
+        self.nature = Category(name='general')
+        self.image = Image(image='images/lagoon.jpeg',image_name='dan', image_descprition  ='he is cool',location=self.nakuru,category=self.nature, id=1)
+        
+    def test_instance(self):
+        self.assertTrue(isinstance(self.image,Image)) 
+
+        
+        
 
     
