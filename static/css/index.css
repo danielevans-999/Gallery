@@ -13,8 +13,10 @@ img{
 
 body{
     background-color: #4444;
+    font-family: 'Carter One', cursive;
 }
 
 img:hover{
     cursor: pointer;
 }
+
