@@ -17,3 +17,8 @@ def search_results(request):
     else:
         message = "You haven't searched for any term "
         return render(request, 'mysite/search.html', {"message": message})
+    
+def search_location(request,location):
+    images_by_location = Image.filter_by_location(location)
+    
+    return render(request,'mysite/location.html', {"images":images_by_location})
