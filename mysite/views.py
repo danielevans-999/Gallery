@@ -3,7 +3,7 @@ from .models import Image
 
 def home(request):
     images = Image.objects.all()
-    return render(request,'mysite/home.html' ,{"images":images})
+    return render(request,'mysite/home.html',{"images":images})
 
 def search_results(request):
     if 'image' in request.GET and request.GET["image"]:

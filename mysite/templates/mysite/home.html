@@ -1,13 +1,34 @@
 {% extends 'mysite/base.html' %}
 
-{%  block content%}
+{%  block content %}
 
 <div class="row">
     {% for image in images %}
-    <div class="col-sm-12 col-md-6 col-lg-3 img-responsive">
-        <img src="{{image.image.url}}" alt="image.image_name" class="img-thumbnail" height="200px" width="200px">
+    <div class="col-sm-12 col-md-6 col-lg-3 " data-toggle="modal" data-target="#{{image.image_description}}">
+     <img src="{{image.image.url}}" class="img-fluid img-thumbnail img-responsive"  alt="image" >
     </div>
+                        <!------------------------- modal---------------->
+    <div class="modal fade" id="{{image.image_description}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-body">
+                  <h3 class="modal-title text-center" id="title">{{image.image_name}}</h3>
+                
+                  <p class="text-center">{{image.image_description}}</p>
+                  <p>Location : {{image.location}}</p>
+                  <p>Category : {{image.category}}</p>
+                  <p>id{{image.id}}</p>
+                </div>
+                <div class="modal-footer">
+                    <input type="text" value="{{image.image.url}}" id="copy" style="width:250px" class="form-control">
+                  <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
     {% endfor %}
 </div>
+
+
 
 {% endblock%}

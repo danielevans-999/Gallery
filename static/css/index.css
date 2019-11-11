@@ -14,3 +14,7 @@ img{
 body{
     background-color: #4444;
 }
+
+img:hover{
+    cursor: pointer;
+}
